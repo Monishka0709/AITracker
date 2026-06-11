@@ -50,6 +50,11 @@ app.use('/api/habits', habitRouter);
 app.use('/api/logs', logRouter);
 app.use('/api/ai', aiRouter);
 
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 app.use(notFound)
 app.use(errorHandlers) 
 
@@ -61,6 +66,3 @@ connectDB().then(() => {
     console.log(`Server running on http://localhost:${PORT}`)})
 })
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
